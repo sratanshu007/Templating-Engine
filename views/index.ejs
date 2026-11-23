@@ -1,0 +1,18 @@
+<%- include("partial/header") %>
+
+<h2>Active Users List</h2>
+<a href = "/form">Add New User </a>
+ <ul>
+    <% users.forEach(user => { %>
+        <li>
+            <strong><%= user.name %></strong>
+            <% if (user.online) { %>
+                <span style = "color:green">online</span>
+                <%} else { %>
+                    <span style = "color:red">offline</span>
+                <% } %>
+            </li>
+    <% }) %> 
+ </ul>
+
+ <%- include("partial/footer") %>
